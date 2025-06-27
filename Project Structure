@@ -1,0 +1,156 @@
+real-estate-agent-website/
+├── 📄 package.json
+├── 📄 package-lock.json
+├── 📄 .gitignore
+├── 📄 .env.example
+├── 📄 .env.local
+├── 📄 README.md
+├── 📄 SETUP_GUIDE.md
+├── 📄 vite.config.js
+├── 📄 postcss.config.js
+├── 📄 tailwind.config.js
+├── 📄 .eslintrc.json
+├── 📄 .prettierrc
+│
+├── 📁 public/
+│   ├── 📄 favicon.ico
+│   ├── 📄 robots.txt
+│   ├── 📄 sitemap.xml
+│   └── 📁 assets/
+│       ├── 📁 images/
+│       │   ├── 📁 placeholders/
+│       │   │   ├── logo-placeholder.png
+│       │   │   ├── hero-bg.jpg
+│       │   │   ├── footer-bg.jpg
+│       │   │   └── fallback.jpg
+│       │   ├── 📁 companies/
+│       │   │   ├── company1.png
+│       │   │   ├── company2.png
+│       │   │   ├── company3.png
+│       │   │   └── company4.png
+│       │   ├── 📁 locations/
+│       │   │   ├── loc1-bg.jpg
+│       │   │   ├── loc1-map.png
+│       │   │   ├── loc2-bg.jpg
+│       │   │   ├── loc2-map.png
+│       │   │   ├── loc3-bg.jpg
+│       │   │   ├── loc3-map.png
+│       │   │   ├── loc4-bg.jpg
+│       │   │   └── loc4-map.png
+│       │   └── 📁 optimized/
+│       │       └── (WebP versions of all images)
+│       └── 📁 animations/
+│           ├── water-ripple.json
+│           └── particles-config.json
+│
+├── 📁 src/
+│   ├── 📄 main.jsx
+│   ├── 📄 App.jsx
+│   ├── 📄 index.css
+│   │
+│   ├── 📁 components/
+│   │   ├── 📁 layout/
+│   │   │   ├── 📁 Navigation/
+│   │   │   │   ├── Navigation.jsx
+│   │   │   │   ├── Navigation.module.css
+│   │   │   │   ├── MobileMenu.jsx
+│   │   │   │   └── NavItem.jsx
+│   │   │   ├── 📁 Footer/
+│   │   │   │   ├── Footer.jsx
+│   │   │   │   └── Footer.module.css
+│   │   │   └── 📁 Layout/
+│   │   │       ├── Layout.jsx
+│   │   │       └── Layout.module.css
+│   │   │
+│   │   ├── 📁 sections/
+│   │   │   ├── 📁 Hero/
+│   │   │   │   ├── Hero.jsx
+│   │   │   │   ├── Hero.module.css
+│   │   │   │   ├── HeroBackground.jsx
+│   │   │   │   └── ParticleAnimation.jsx
+│   │   │   ├── 📁 Companies/
+│   │   │   │   ├── Companies.jsx
+│   │   │   │   ├── Companies.module.css
+│   │   │   │   ├── CompanyCarousel.jsx
+│   │   │   │   └── CompanyLogo.jsx
+│   │   │   ├── 📁 LocationGrid/
+│   │   │   │   ├── LocationGrid.jsx
+│   │   │   │   ├── LocationGrid.module.css
+│   │   │   │   ├── LocationCard.jsx
+│   │   │   │   ├── LocationCard.module.css
+│   │   │   │   └── MapOverlay.jsx
+│   │   │   ├── 📁 Awards/
+│   │   │   │   ├── Awards.jsx
+│   │   │   │   ├── Awards.module.css
+│   │   │   │   └── AwardItem.jsx
+│   │   │   └── 📁 Contact/
+│   │   │       ├── Contact.jsx
+│   │   │       ├── Contact.module.css
+│   │   │       ├── ContactForm.jsx
+│   │   │       └── FormValidation.js
+│   │   │
+│   │   ├── 📁 common/
+│   │   │   ├── 📁 Button/
+│   │   │   │   ├── Button.jsx
+│   │   │   │   └── Button.module.css
+│   │   │   ├── 📁 Image/
+│   │   │   │   ├── ProtectedImage.jsx
+│   │   │   │   └── LazyImage.jsx
+│   │   │   ├── 📁 Loading/
+│   │   │   │   ├── Spinner.jsx
+│   │   │   │   └── Skeleton.jsx
+│   │   │   └── 📁 SEO/
+│   │   │       └── MetaTags.jsx
+│   │   │
+│   │   └── 📁 animations/
+│   │       ├── ScrollReveal.jsx
+│   │       ├── ParallaxWrapper.jsx
+│   │       └── AnimatedCounter.jsx
+│   │
+│   ├── 📁 hooks/
+│   │   ├── useScrollAnimation.js
+│   │   ├── useIntersectionObserver.js
+│   │   ├── useMediaQuery.js
+│   │   ├── useImageProtection.js
+│   │   └── useFormValidation.js
+│   │
+│   ├── 📁 utils/
+│   │   ├── privacy.js
+│   │   ├── imageOptimization.js
+│   │   ├── animations.js
+│   │   ├── formHelpers.js
+│   │   └── constants.js
+│   │
+│   ├── 📁 data/
+│   │   ├── siteConfig.js
+│   │   ├── navigationData.js
+│   │   ├── companiesData.js
+│   │   ├── locationsData.js
+│   │   ├── awardsData.js
+│   │   └── contactData.js
+│   │
+│   ├── 📁 styles/
+│   │   ├── variables.css
+│   │   ├── animations.css
+│   │   ├── utilities.css
+│   │   └── responsive.css
+│   │
+│   └── 📁 lib/
+│       ├── particles.js
+│       ├── smoothScroll.js
+│       └── formSubmission.js
+│
+├── 📁 scripts/
+│   ├── generateSitemap.js
+│   ├── optimizeImages.js
+│   └── updatePlaceholders.js
+│
+├── 📁 docs/
+│   ├── CUSTOMIZATION.md
+│   ├── DEPLOYMENT.md
+│   └── MAINTENANCE.md
+│
+└── 📁 tests/
+    ├── 📁 unit/
+    ├── 📁 integration/
+    └── 📁 e2e/
