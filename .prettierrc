@@ -1,0 +1,429 @@
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "jsxSingleQuote": false,
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "jsxBracketSameLine": false,
+  "arrowParens": "always",
+  "rangeStart": 0,
+  "rangeEnd": null,
+  "requirePragma": false,
+  "insertPragma": false,
+  "proseWrap": "preserve",
+  "htmlWhitespaceSensitivity": "css",
+  "vueIndentScriptAndStyle": false,
+  "endOfLine": "lf",
+  "embeddedLanguageFormatting": "auto",
+  "singleAttributePerLine": true,
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindConfig": "./tailwind.config.js",
+  "tailwindFunctions": ["clsx", "cn", "twMerge"],
+  "overrides": [
+    {
+      "files": "*.json",
+      "options": {
+        "printWidth": 80,
+        "tabWidth": 2,
+        "useTabs": false,
+        "parser": "json"
+      }
+    },
+    {
+      "files": ["*.yml", "*.yaml"],
+      "options": {
+        "printWidth": 80,
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": false,
+        "parser": "yaml"
+      }
+    },
+    {
+      "files": "*.md",
+      "options": {
+        "printWidth": 80,
+        "proseWrap": "always",
+        "parser": "markdown"
+      }
+    },
+    {
+      "files": ["*.css", "*.scss", "*.less"],
+      "options": {
+        "printWidth": 100,
+        "singleQuote": false,
+        "parser": "css"
+      }
+    },
+    {
+      "files": "*.html",
+      "options": {
+        "printWidth": 120,
+        "tabWidth": 2,
+        "htmlWhitespaceSensitivity": "strict",
+        "parser": "html"
+      }
+    },
+    {
+      "files": ["*.tsx", "*.jsx"],
+      "options": {
+        "printWidth": 100,
+        "jsxSingleQuote": false,
+        "jsxBracketSameLine": false,
+        "singleAttributePerLine": true,
+        "parser": "typescript"
+      }
+    },
+    {
+      "files": ["*.ts", "*.js", "*.mjs", "*.cjs"],
+      "options": {
+        "printWidth": 100,
+        "singleQuote": true,
+        "parser": "typescript"
+      }
+    },
+    {
+      "files": ["*.graphql", "*.gql"],
+      "options": {
+        "printWidth": 80,
+        "tabWidth": 2,
+        "parser": "graphql"
+      }
+    },
+    {
+      "files": ".prettierrc",
+      "options": {
+        "parser": "json"
+      }
+    },
+    {
+      "files": ".eslintrc.json",
+      "options": {
+        "parser": "json",
+        "printWidth": 120
+      }
+    },
+    {
+      "files": ["package.json", "tsconfig.json", "jsconfig.json"],
+      "options": {
+        "parser": "json-stringify",
+        "printWidth": 80
+      }
+    },
+    {
+      "files": ["*.svg"],
+      "options": {
+        "parser": "html",
+        "htmlWhitespaceSensitivity": "ignore"
+      }
+    },
+    {
+      "files": ["*.xml"],
+      "options": {
+        "parser": "html",
+        "htmlWhitespaceSensitivity": "strict",
+        "xmlWhitespaceSensitivity": "strict"
+      }
+    },
+    {
+      "files": ["*.vue"],
+      "options": {
+        "parser": "vue",
+        "vueIndentScriptAndStyle": true
+      }
+    },
+    {
+      "files": [".env*", "*.env"],
+      "options": {
+        "parser": "sh"
+      }
+    },
+    {
+      "files": ["Dockerfile", "*.dockerfile"],
+      "options": {
+        "parser": "sh"
+      }
+    },
+    {
+      "files": ["*.sh", "*.bash", "*.zsh"],
+      "options": {
+        "parser": "sh",
+        "keepComments": true
+      }
+    },
+    {
+      "files": ["*.sql"],
+      "options": {
+        "parser": "sql",
+        "keywordCase": "upper"
+      }
+    },
+    {
+      "files": ["*.prisma"],
+      "options": {
+        "parser": "prisma",
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": ["*.toml"],
+      "options": {
+        "parser": "toml",
+        "useTabs": false
+      }
+    },
+    {
+      "files": ["*.astro"],
+      "options": {
+        "parser": "astro"
+      }
+    },
+    {
+      "files": ["*.php"],
+      "options": {
+        "parser": "php",
+        "phpVersion": "8.0",
+        "trailingCommaPHP": true,
+        "braceStyle": "1tbs"
+      }
+    },
+    {
+      "files": ["*.java"],
+      "options": {
+        "parser": "java",
+        "tabWidth": 4
+      }
+    },
+    {
+      "files": ["*.py"],
+      "options": {
+        "parser": "python",
+        "tabWidth": 4
+      }
+    },
+    {
+      "files": ["*.rb"],
+      "options": {
+        "parser": "ruby",
+        "rubyHashLabel": true,
+        "trailingComma": "none"
+      }
+    },
+    {
+      "files": ["*.go"],
+      "options": {
+        "parser": "go",
+        "useTabs": true
+      }
+    },
+    {
+      "files": ["*.rs"],
+      "options": {
+        "parser": "rust",
+        "tabWidth": 4
+      }
+    },
+    {
+      "files": ["*.swift"],
+      "options": {
+        "parser": "swift",
+        "tabWidth": 4
+      }
+    },
+    {
+      "files": ["*.kt", "*.kts"],
+      "options": {
+        "parser": "kotlin",
+        "tabWidth": 4
+      }
+    },
+    {
+      "files": ["*.dart"],
+      "options": {
+        "parser": "dart",
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": ["*.lua"],
+      "options": {
+        "parser": "lua",
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": ["*.elm"],
+      "options": {
+        "parser": "elm",
+        "tabWidth": 4
+      }
+    },
+    {
+      "files": ["*.pug", "*.jade"],
+      "options": {
+        "parser": "pug",
+        "tabWidth": 2,
+        "useTabs": false
+      }
+    },
+    {
+      "files": ["*.hbs", "*.handlebars"],
+      "options": {
+        "parser": "glimmer",
+        "singleQuote": false
+      }
+    },
+    {
+      "files": ["*.tf", "*.tfvars"],
+      "options": {
+        "parser": "terraform",
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": ["*.proto"],
+      "options": {
+        "parser": "proto",
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": ["*.feature"],
+      "options": {
+        "parser": "gherkin",
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": ["*.mdx"],
+      "options": {
+        "printWidth": 80,
+        "proseWrap": "always",
+        "parser": "mdx"
+      }
+    },
+    {
+      "files": ["*.jsonc", "tsconfig.*.json"],
+      "options": {
+        "parser": "jsonc",
+        "trailingComma": "none"
+      }
+    },
+    {
+      "files": ["*.json5"],
+      "options": {
+        "parser": "json5",
+        "singleQuote": true,
+        "quoteProps": "preserve"
+      }
+    },
+    {
+      "files": [".prettierrc.*", ".stylelintrc.*", ".eslintrc.*"],
+      "options": {
+        "parser": "json",
+        "printWidth": 80
+      }
+    },
+    {
+      "files": ["*.code-workspace"],
+      "options": {
+        "parser": "jsonc",
+        "tabWidth": 4
+      }
+    },
+    {
+      "files": ["*.wxss"],
+      "options": {
+        "parser": "css"
+      }
+    },
+    {
+      "files": ["*.wxml"],
+      "options": {
+        "parser": "html",
+        "htmlWhitespaceSensitivity": "ignore"
+      }
+    },
+    {
+      "files": ["*.njk", "*.nunjucks"],
+      "options": {
+        "parser": "html"
+      }
+    },
+    {
+      "files": ["*.ejs"],
+      "options": {
+        "parser": "html"
+      }
+    },
+    {
+      "files": ["*.http", "*.rest"],
+      "options": {
+        "parser": "http"
+      }
+    },
+    {
+      "files": ["*.gitignore", "*.dockerignore", "*.npmignore", "*.prettierignore", "*.eslintignore"],
+      "options": {
+        "parser": "gitignore"
+      }
+    },
+    {
+      "files": ["*.editorconfig"],
+      "options": {
+        "parser": "ini"
+      }
+    },
+    {
+      "files": ["*.cfg", "*.conf", "*.ini"],
+      "options": {
+        "parser": "ini"
+      }
+    },
+    {
+      "files": ["*.properties"],
+      "options": {
+        "parser": "properties"
+      }
+    },
+    {
+      "files": ["nginx.conf", "*.nginx"],
+      "options": {
+        "parser": "nginx"
+      }
+    },
+    {
+      "files": ["Makefile", "makefile", "*.mk"],
+      "options": {
+        "parser": "makefile",
+        "useTabs": true
+      }
+    },
+    {
+      "files": ["*.bat", "*.cmd"],
+      "options": {
+        "parser": "batch"
+      }
+    },
+    {
+      "files": ["*.ps1", "*.psm1", "*.psd1"],
+      "options": {
+        "parser": "powershell",
+        "tabWidth": 4
+      }
+    },
+    {
+      "files": ["COMMIT_EDITMSG", "MERGE_MSG"],
+      "options": {
+        "parser": "markdown",
+        "proseWrap": "never"
+      }
+    }
+  ]
+}
