@@ -14,10 +14,10 @@
     "vite",
     "tailwindcss"
   ],
-  "homepage": "https://dgrealtors.com",
+  "homepage": "https://dgrealtors.in",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dgrealtors/dgrealtors-website.git"
+    "url": "git+https://github.com/Serenawaifu/Real-estate-"
   },
   "engines": {
     "node": ">=20.0.0",
