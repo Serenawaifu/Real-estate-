@@ -1,21 +1,23 @@
 {
-  "name": "real-estate-agent-website",
+  "name": "DGrealtors",
   "version": "1.0.0",
   "private": true,
-  "description": "Modern, minimal, personality-driven website for commercial real estate agent with advanced features",
-  "author": "Your Name <your.email@example.com>",
+  "description": "DGrealtors has been in the real estate business for over 14 years, serving some of the industry's most prominent businesses.",
+  "author": "DGrealtors <contact@dgrealtors.com>",
   "license": "MIT",
   "keywords": [
+    "dgrealtors",
     "real-estate",
     "commercial-property",
+    "property-leasing",
     "react",
     "vite",
     "tailwindcss"
   ],
-  "homepage": "https://yourdomain.com",
+  "homepage": "https://dgrealtors.in",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/real-estate-agent-website.git"
+    "url": "git+https://github.com/Serenawaifu/Real-estate-"
   },
   "engines": {
     "node": ">=18.0.0",
@@ -72,7 +74,6 @@
     "react-intersection-observer": "^9.5.3",
     "react-lazy-load-image-component": "^1.6.0",
     "aos": "^2.3.4",
-    "particles.js": "^2.0.0",
     "tsparticles": "^3.1.0",
     "@tsparticles/react": "^3.0.0",
     "@emailjs/browser": "^3.12.1",
@@ -81,10 +82,8 @@
     "clsx": "^2.1.0",
     "react-hot-toast": "^2.4.1",
     "zustand": "^4.5.0",
-    "@tanstack/react-query": "^5.18.0",
     "date-fns": "^3.3.0",
     "react-countup": "^6.5.0",
-    "react-typist-component": "^2.0.2",
     "disable-devtool": "^0.3.8",
     "lottie-react": "^2.4.0",
     "react-use": "^17.4.3",
@@ -129,14 +128,6 @@
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^10.0.1",
-    "vitest": "^1.2.1",
-    "@vitest/ui": "^1.2.1",
-    "@vitest/coverage-v8": "^1.2.1",
-    "@testing-library/react": "^14.1.2",
-    "@testing-library/jest-dom": "^6.2.0",
-    "@testing-library/user-event": "^14.5.2",
-    "@playwright/test": "^1.41.0",
-    "msw": "^2.1.2",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
     "commitizen": "^4.3.0",
@@ -147,10 +138,18 @@
     "cross-env": "^7.0.3",
     "dotenv": "^16.3.1",
     "serve": "^14.2.1",
-    "lighthouse": "^11.5.0",
-    "netlify-cli": "^17.15.0",
-    "vercel": "^33.1.0",
-    "workbox-webpack-plugin": "^7.0.0"
+    "netlify-cli": "^17.15.0"
+  },
+  "optionalDependencies": {
+    "@tanstack/react-query": "^5.18.0",
+    "vitest": "^1.2.1",
+    "@vitest/ui": "^1.2.1",
+    "@vitest/coverage-v8": "^1.2.1",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/jest-dom": "^6.2.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@playwright/test": "^1.41.0",
+    "lighthouse": "^11.5.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -196,53 +195,5 @@
     "bracketSpacing": true,
     "jsxBracketSameLine": false,
     "plugins": ["prettier-plugin-tailwindcss"]
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "browser": true,
-      "es2020": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:react-hooks/recommended",
-      "plugin:react/recommended",
-      "prettier"
-    ],
-    "ignorePatterns": ["dist", ".eslintrc.cjs"],
-    "parser": "@typescript-eslint/parser",
-    "plugins": ["react-refresh"],
-    "rules": {
-      "react-refresh/only-export-components": [
-        "warn",
-        {
-          "allowConstantExport": true
-        }
-      ],
-      "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off"
-    }
-  },
-  "stylelint": {
-    "extends": [
-      "stylelint-config-standard",
-      "stylelint-config-tailwindcss"
-    ],
-    "rules": {
-      "at-rule-no-unknown": [
-        true,
-        {
-          "ignoreAtRules": [
-            "tailwind",
-            "apply",
-            "variants",
-            "responsive",
-            "screen"
-          ]
-        }
-      ]
-    }
   }
 }
-
