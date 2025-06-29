@@ -1,0 +1,415 @@
+/* ==========================================
+   DGrealtors - Location Card Module Styles
+   ========================================== */
+
+/* CSS Custom Properties */
+.locationCard {
+  --card-bg: white;
+  --card-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --card-hover-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --card-border-radius: 0.5rem;
+  --transition-duration: 300ms;
+  --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  position: relative;
+  background: var(--card-bg);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow var(--transition-duration) var(--transition-ease), transform var(--transition-duration) var(--transition-ease);
+}
+
+.locationCard:hover {
+  box-shadow: var(--card-hover-shadow);
+  transform: translateY(-2px);
+}
+
+/* Image Section */
+.imageSection {
+  position: relative;
+  overflow: hidden;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-duration) var(--transition-ease);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity var(--transition-duration) var(--transition-ease);
+}
+
+.imageWrapper:hover .imageOverlay {
+  opacity: 1;
+}
+
+/* Image Thumbnails */
+.imageThumbnails {
+  display: flex;
+  gap: 0.5rem;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 10;
+}
+
+.thumbnail {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition-duration) var(--transition-ease);
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail.active {
+  border: 2px solid var(--color-dg-orange);
+  transform: scale(1.1);
+}
+
+/* Featured Badge */
+.featuredBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(255, 215, 0, 0.8);
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  z-index: 20;
+}
+
+/* Property Type Badge */
+.propertyType {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--color-dg-orange);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Quick Actions */
+.quickActions {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: opacity var(--transition-duration) var(--transition-ease);
+}
+
+.locationCard:hover .quickActions {
+  opacity: 1;
+}
+
+.actionButton {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-dg-orange);
+  cursor: pointer;
+  transition: background var(--transition-duration) var(--transition-ease), transform var(--transition-duration) var(--transition-ease);
+}
+
+.actionButton:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+/* Card Content */
+.cardContent {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.locationName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-dg-gray-800);
+}
+
+.locationArea {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--color-dg-gray-600);
+}
+
+.description {
+  font-size: 0.875rem;
+  color: var(--color-dg-gray-600);
+  line-height: 1.5;
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.statBox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 0.25rem;
+}
+
+.statIcon {
+  color: var(--color-dg-orange);
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.statValue {
+  font-weight: 600;
+  color: var(--color-dg-gray-800);
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: var(--color-dg-gray-600);
+}
+
+/* Popular For */
+.popularFor {
+  margin-top: 0.5rem;
+}
+
+.popularLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-dg-gray-800);
+}
+
+.popularTags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.popularTag {
+  padding: 0.25rem 0.5rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  color: var(--color-dg-gray-800);
+}
+
+/* Amenities */
+.amenities {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.amenityBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  color: var(--color-dg-gray-800);
+}
+
+/* Rating */
+.rating {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.rating span {
+  margin-left: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--color-dg-gray-600);
+}
+
+/* Hover Actions */
+.hoverActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.viewDetailsButton {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: var(--color-dg-orange);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition-duration) var(--transition-ease);
+}
+
+.viewDetailsButton:hover {
+  background: darken(var(--color-dg-orange), 10%);
+}
+
+.contactButton {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--color-dg-gray-800);
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition-duration) var(--transition-ease);
+}
+
+.contactButton:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Card */
+.contactCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: var(--card-shadow);
+  padding: 1rem;
+  z-index: 20;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .locationCard {
+    --card-bg: #f9f9f9;
+  }
+
+  .imageSection {
+    height: 150px;
+  }
+
+  .mainImage {
+    height: 100%;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .statBox {
+    padding: 0.25rem;
+  }
+
+  .popularLabel {
+    font-size: 0.75rem;
+  }
+
+  .amenityBadge {
+    font-size: 0.625rem;
+  }
+
+  .viewDetailsButton,
+  .contactButton {
+    font-size: 0.75rem;
+  }
+}
+
+/* Dark Mode */
+[data-theme="dark"] .locationCard {
+  background: #1f1f1f;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .statsGrid {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .amenityBadge {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .viewDetailsButton,
+[data-theme="dark"] .contactButton {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .viewDetailsButton:hover,
+[data-theme="dark"] .contactButton:hover {
+  background: #2563eb;
+}
+
+/* Print Styles */
+@media print {
+  .locationCard {
+    box-shadow: none;
+    background: white;
+  }
+
+  .quickActions,
+  .hoverActions {
+    display: none;
+  }
+  }
+  
