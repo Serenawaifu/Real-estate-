@@ -1,0 +1,620 @@
+/* ==========================================
+   DGrealtors - Navigation Module Styles
+   ========================================== */
+
+/* CSS Custom Properties */
+.navigation {
+  --nav-height: 80px;
+  --nav-padding: 1rem;
+  --nav-bg: rgb(var(--color-white));
+  --nav-text: rgb(var(--color-gray-700));
+  --nav-text-hover: rgb(var(--color-dg-orange));
+  --nav-border: rgb(var(--color-gray-200));
+  --nav-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --nav-backdrop-blur: 12px;
+  --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Navigation */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  height: var(--nav-height);
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  transition: all var(--transition-smooth);
+  will-change: transform;
+}
+
+/* Navigation Variants */
+.navigation--default {
+  background-color: var(--nav-bg);
+}
+
+.navigation--transparent {
+  background-color: transparent;
+  border-bottom-color: transparent;
+  --nav-text: rgb(var(--color-white));
+  --nav-text-hover: rgb(var(--color-dg-peach));
+}
+
+.navigation--transparent.navigationScrolled {
+  background-color: rgba(var(--color-white), 0.95);
+  backdrop-filter: blur(var(--nav-backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--nav-backdrop-blur));
+  border-bottom-color: var(--nav-border);
+  --nav-text: rgb(var(--color-gray-700));
+  --nav-text-hover: rgb(var(--color-dg-orange));
+}
+
+.navigation--glass {
+  background-color: rgba(var(--color-white), 0.8);
+  backdrop-filter: blur(var(--nav-backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--nav-backdrop-blur));
+}
+
+.navigation--dark {
+  --nav-bg: rgb(var(--color-gray-900));
+  --nav-text: rgb(var(--color-gray-300));
+  --nav-text-hover: rgb(var(--color-dg-peach));
+  --nav-border: rgb(var(--color-gray-800));
+}
+
+/* Scroll States */
+.navigationScrolled {
+  box-shadow: var(--nav-shadow);
+}
+
+.navigationHidden {
+  transform: translateY(-100%);
+}
+
+/* Container */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--nav-padding);
+}
+
+/* Logo */
+.logoWrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform var(--transition-base);
+}
+
+.logoLink:hover {
+  transform: scale(1.05);
+}
+
+.logoLink:active {
+  transform: scale(0.98);
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: none;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .desktopNav {
+    display: flex;
+  }
+}
+
+/* Navigation Links */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Item */
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0;
+  color: var(--nav-text);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: color var(--transition-base);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: var(--nav-text-hover);
+}
+
+/* Active Link Indicator */
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--nav-text-hover);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-smooth);
+}
+
+.navLinkActive::after,
+.navLink:hover::after {
+  transform: scaleX(1);
+}
+
+/* Dropdown */
+.navLinkWithDropdown {
+  padding-right: 0;
+}
+
+.dropdownIcon {
+  width: 1rem;
+  height: 1rem;
+  transition: transform var(--transition-base);
+}
+
+.dropdownIconOpen {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  background-color: rgb(var(--color-white));
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  padding: 0.5rem;
+  z-index: 50;
+  pointer-events: all;
+}
+
+.dropdown::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: rgb(var(--color-white));
+  border-radius: 2px;
+  transform: translateX(-50%) rotate(45deg);
+  box-shadow: -3px -3px 5px rgba(0, 0, 0, 0.04);
+}
+
+.dropdownContent {
+  position: relative;
+  z-index: 1;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: rgb(var(--color-gray-700));
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.dropdownItem::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgb(var(--color-dg-orange));
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.dropdownItem:hover {
+  color: rgb(var(--color-dg-orange));
+}
+
+.dropdownItem:hover::before {
+  opacity: 0.08;
+}
+
+.dropdownItemIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: rgb(var(--color-dg-orange));
+}
+
+.dropdownItemContent {
+  flex: 1;
+}
+
+.dropdownItemLabel {
+  display: block;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+.dropdownItemDescription {
+  display: block;
+  font-size: 0.8125rem;
+  color: rgb(var(--color-gray-500));
+  margin-top: 0.125rem;
+  line-height: 1.4;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+/* Action Button */
+.actionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--nav-text);
+  background-color: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.actionButton:hover {
+  color: var(--nav-text-hover);
+  background-color: rgba(var(--color-gray-100), 0.8);
+}
+
+.actionButton:active {
+  transform: scale(0.95);
+}
+
+.actionButton svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Tooltip */
+.actionButton[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  padding: 0.375rem 0.75rem;
+  background-color: rgb(var(--color-gray-900));
+  color: white;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  border-radius: 0.375rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-base);
+}
+
+.actionButton[data-tooltip]:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* Theme Toggle Animation */
+.actionButton > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* User Menu */
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.375rem 0.75rem;
+  background-color: rgba(var(--color-gray-100), 0.5);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.userMenu:hover {
+  background-color: rgba(var(--color-gray-100), 0.8);
+}
+
+.userAvatar {
+  flex-shrink: 0;
+}
+
+.userName {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--nav-text);
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Auth Buttons */
+.authButtons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Mobile Menu Toggle */
+.mobileMenuToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+@media (min-width: 1024px) {
+  .mobileMenuToggle {
+    display: none;
+  }
+}
+
+.mobileMenuToggle:hover {
+  background-color: rgba(var(--color-gray-100), 0.8);
+}
+
+.mobileMenuToggle:active {
+  transform: scale(0.95);
+}
+
+/* Hamburger Icon */
+.mobileMenuIcon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mobileMenuLine {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--nav-text);
+  border-radius: 1px;
+  transition: all var(--transition-smooth);
+}
+
+.mobileMenuLine:nth-child(1) {
+  top: 0.25rem;
+}
+
+.mobileMenuLine:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.mobileMenuLine:nth-child(3) {
+  bottom: 0.25rem;
+}
+
+/* Hamburger Animation */
+.mobileMenuLineOpen:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.mobileMenuLineOpen:nth-child(2) {
+  opacity: 0;
+  transform: translateY(-50%) scale(0);
+}
+
+.mobileMenuLineOpen:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+/* Progress Bar */
+.progressBar {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: rgba(var(--color-gray-200), 0.3);
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, 
+    rgb(var(--color-dg-peach)) 0%,
+    rgb(var(--color-dg-orange)) 50%,
+    rgb(var(--color-dg-olive)) 100%
+  );
+  transform-origin: left;
+  will-change: transform;
+}
+
+/* Spacer */
+.spacer {
+  height: var(--nav-height);
+}
+
+/* Dark Mode */
+[data-theme="dark"] .navigation {
+  --nav-bg: rgb(var(--color-gray-900));
+  --nav-text: rgb(var(--color-gray-300));
+  --nav-text-hover: rgb(var(--color-dg-peach));
+  --nav-border: rgb(var(--color-gray-800));
+  --nav-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .dropdown {
+  background-color: rgb(var(--color-gray-800));
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .dropdown::before {
+  background-color: rgb(var(--color-gray-800));
+}
+
+[data-theme="dark"] .dropdownItem {
+  color: rgb(var(--color-gray-300));
+}
+
+[data-theme="dark"] .dropdownItem:hover {
+  color: rgb(var(--color-dg-peach));
+}
+
+[data-theme="dark"] .dropdownItemDescription {
+  color: rgb(var(--color-gray-500));
+}
+
+/* Responsive */
+@media (max-width: 1280px) {
+  .navLinks {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navigation {
+    --nav-height: 64px;
+    --nav-padding: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .navigation {
+    --nav-height: 60px;
+    --nav-padding: 1rem;
+  }
+  
+  .authButtons {
+    display: none;
+  }
+}
+
+/* Print */
+@media print {
+  .navigation {
+    display: none;
+  }
+  
+  .spacer {
+    display: none;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .navigation,
+  .navLink,
+  .navLink::after,
+  .dropdownIcon,
+  .actionButton,
+  .mobileMenuLine {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* High Contrast */
+@media (prefers-contrast: high) {
+  .navigation {
+    border-bottom-width: 2px;
+  }
+  
+  .navLink::after {
+    height: 3px;
+  }
+  
+  .dropdown {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Focus States */
+.navLink:focus-visible,
+.dropdownItem:focus-visible,
+.actionButton:focus-visible,
+.mobileMenuToggle:focus-visible {
+  outline: 2px solid rgb(var(--color-dg-orange));
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+/* Loading State */
+@keyframes navShimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.navSkeleton {
+  display: inline-block;
+  height: 1rem;
+  background: linear-gradient(
+    90deg,
+    rgb(var(--color-gray-200)) 0%,
+    rgb(var(--color-gray-100)) 50%,
+    rgb(var(--color-gray-200)) 100%
+  );
+  background-size: 200px 100%;
+  border-radius: 0.25rem;
+  animation: navShimmer 1.5s ease-out infinite;
+  }
+  
