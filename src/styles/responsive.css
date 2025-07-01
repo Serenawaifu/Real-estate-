@@ -1,0 +1,249 @@
+/**
+ * Responsive Styles for DGrealtors
+ * Media queries and responsive design adjustments
+ */
+
+/* ===== Base Styles ===== */
+body {
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+
+/* ===== Mobile Styles (Default) ===== */
+.container {
+  padding-left: var(--spacing-container-x);
+  padding-right: var(--spacing-container-x);
+}
+
+/* ===== Tablet Styles ===== */
+@media (min-width: 640px) {
+  body {
+    font-size: var(--font-size-lg);
+  }
+
+  .container {
+    padding-left: var(--spacing-container-x-lg);
+    padding-right: var(--spacing-container-x-lg);
+  }
+
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .text-lg {
+    font-size: var(--font-size-xl);
+  }
+
+  .btn {
+    padding: var(--spacing-3) var(--spacing-5);
+  }
+}
+
+/* ===== Desktop Styles ===== */
+@media (min-width: 1024px) {
+  body {
+    font-size: var(--font-size-xl);
+  }
+
+  .container {
+    max-width: 1024px;
+    padding-left: var(--spacing-container-x-xl);
+    padding-right: var(--spacing-container-x-xl);
+  }
+
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .text-xl {
+    font-size: var(--font-size-2xl);
+  }
+
+  .btn {
+    padding: var(--spacing-4) var(--spacing-6);
+  }
+}
+
+/* ===== Large Desktop Styles ===== */
+@media (min-width: 1280px) {
+  body {
+    font-size: var(--font-size-2xl);
+  }
+
+  .container {
+    max-width: 1280px;
+    padding-left: var(--spacing-container-x-xxl);
+    padding-right: var(--spacing-container-x-xxl);
+  }
+
+  .grid-cols-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .text-2xl {
+    font-size: var(--font-size-3xl);
+  }
+
+  .btn {
+    padding: var(--spacing-5) var(--spacing-7);
+  }
+}
+
+/* ===== Extra Large Desktop Styles ===== */
+@media (min-width: 1536px) {
+  body {
+    font-size: var(--font-size-3xl);
+  }
+
+  .container {
+    max-width: 1536px;
+    padding-left: var(--spacing-container-x-xxxl);
+    padding-right: var(--spacing-container-x-xxxl);
+  }
+
+  .grid-cols-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .text-3xl {
+    font-size: var(--font-size-4xl);
+  }
+
+  .btn {
+    padding: var(--spacing-6) var(--spacing-8);
+  }
+}
+
+/* ===== Utility Classes for Responsive Design ===== */
+@media (max-width: 639px) {
+  .text-sm {
+    font-size: var(--font-size-sm);
+  }
+
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hidden-tablet {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hidden-desktop {
+    display: none !important;
+  }
+}
+
+/* Responsive Typography */
+h1 {
+  font-size: var(--font-size-3xl);
+}
+
+h2 {
+  font-size: var(--font-size-2xl);
+}
+
+h3 {
+  font-size: var(--font-size-xl);
+}
+
+h4 {
+  font-size: var(--font-size-lg);
+}
+
+h5 {
+  font-size: var(--font-size-md);
+}
+
+h6 {
+  font-size: var(--font-size-sm);
+}
+
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: var(--spacing-2);
+  text-align: left;
+}
+
+@media (max-width: 639px) {
+  th, td {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* Responsive Forms */
+input, select, textarea {
+  width: 100%;
+  padding: var(--spacing-2);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--border-radius);
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+/* Responsive Buttons */
+.btn {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Responsive Cards */
+.card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive Navigation */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nav-item {
+  padding: var(--spacing-3);
+}
+
+@media (max-width: 639px) {
+  .nav {
+    flex-direction: column;
+  }
+}
