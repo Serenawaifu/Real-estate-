@@ -852,7 +852,7 @@ For additional support or custom development:
 
 Email: dev@dgrealtors.com
 Documentation: https://docs.dgrealtors.com
-GitHub: https://github.com/dgrealtors/website
+GitHub: https://github.com/Serenawaifu/Real-estate-
 Last Updated: {{current.date}} Version: 1.0.0
 
 
